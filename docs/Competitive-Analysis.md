@@ -622,15 +622,12 @@ The tools can therefore complement one another.
 
 # 14. Defensible Interview Answer
 
-If asked:
 
 > "Why would someone use BackendPilot AI instead of GitHub Copilot or Cursor?"
 
-The answer should be:
 
 > **"I don't see BackendPilot AI as a replacement for Copilot or Cursor. Those tools are excellent AI coding assistants and are increasingly capable of understanding entire codebases. My project focuses on a different primary problem: understanding an existing backend system. I experienced this problem myself when onboarding to an unfamiliar backend repository. Explaining individual files wasn't enough—I needed to understand request flows, service relationships, architecture, dependencies, and the impact of changing a component. BackendPilot AI is designed around building and exposing that system-level understanding, with architecture maps, request-flow reconstruction, dependency analysis, impact analysis, and repository-specific onboarding. A developer could use BackendPilot to understand the system and then use Copilot or Cursor to implement changes."**
 
-This is the positioning we should use throughout the project.
 
 ---
 
