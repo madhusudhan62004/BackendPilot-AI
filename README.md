@@ -1,3 +1,4 @@
 Important Commands
-1) .\.venv\Scripts\Activate.ps1
-2) uvicorn app.main:app --reload
+.\.venv\Scripts\Activate.ps1 
+uvicorn app.main:app --reload
+docker exec -it backendpilot-mongodb mongosh

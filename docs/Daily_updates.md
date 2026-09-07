@@ -50,3 +50,36 @@ BackendPilot AI
 ### Phase 1 Status
 
 **✅ Complete — Backend Foundation Ready**
+
+## Phase 2 — Day 1: Data Models & MongoDB Layer
+
+### Completed
+
+* Designed the core `User → Project → Repository` data relationship.
+* Created Pydantic models for users, projects and repositories.
+* Created API input schemas with basic validation.
+* Established separate MongoDB collections for core entities.
+* Implemented the DAO/data-access layer.
+* Added basic create/read operations for projects and repositories.
+* Added MongoDB `ObjectId` handling.
+* Created an initial database integration test.
+* Verified the test successfully creates and reads data from MongoDB.
+* Verified MongoDB is running through Docker.
+
+### Architecture
+
+```text
+Router
+   ↓
+Service
+   ↓
+DAO
+   ↓
+MongoDB
+```
+
+### Result
+
+**✅ Phase 2 Day 1 Complete**
+
+The BackendPilot data layer is now connected to MongoDB and ready for the authentication and API layers.
