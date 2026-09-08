@@ -83,3 +83,26 @@ MongoDB
 **✅ Phase 2 Day 1 Complete**
 
 The BackendPilot data layer is now connected to MongoDB and ready for the authentication and API layers.
+
+# Phase 2 — Day 2
+
+## Completed
+
+* Implemented authentication module structure.
+* Added user registration and login APIs.
+* Added password hashing and password verification.
+* Connected authentication to MongoDB.
+* Added JWT access-token generation.
+* Added authentication dependency for protected endpoints.
+* Verified backend starts successfully with Uvicorn.
+* Verified authentication flow through Swagger.
+
+## Key Learning
+
+* Passwords should never be stored directly; only secure hashes are persisted.
+* JWTs provide stateless authentication between the client and backend.
+* FastAPI dependencies can be used to protect and reuse authentication logic across routes.
+
+## Status
+
+**Day 2 completed successfully.**
