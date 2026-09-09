@@ -106,3 +106,37 @@ The BackendPilot data layer is now connected to MongoDB and ready for the authen
 ## Status
 
 **Day 2 completed successfully.**
+
+# Phase 2 — Day 3
+
+## Completed
+
+* Implemented Project Management module.
+* Added MongoDB DAO, service layer and API router.
+* Implemented project CRUD operations.
+* Added project ownership-based authorization.
+* Completed JWT authentication flow.
+* Implemented Register → Login → JWT → Swagger Bearer Authorization flow.
+* Added protected `/auth/me` endpoint.
+* Fixed password hashing and authentication dependencies.
+* Verified backend and authentication flow successfully.
+
+## Key Learning
+
+* Authentication identifies the user; authorization determines whether the user can access a resource.
+* JWT is issued during login and used as a Bearer token for protected APIs.
+* Business rules such as project ownership belong in the service layer.
+* Router, service and DAO layers maintain separation of responsibilities.
+
+## Validation
+
+* User registration ✅
+* User login and JWT generation ✅
+* Swagger Bearer authorization ✅
+* Protected `/auth/me` endpoint ✅
+* Project CRUD flow ✅
+* Project ownership authorization ✅
+
+## Status
+
+**Phase 2 — Day 3 completed successfully.**
