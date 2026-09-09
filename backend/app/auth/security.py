@@ -1,24 +1,29 @@
 from datetime import datetime, timedelta, timezone
 
-import jwt
-from argon2 import PasswordHasher
+from jose import JWTError, jwt
+from passlib.context import CryptContext
 
 from app.core.config import settings
 
 
-password_hasher = PasswordHasher()
+pwd_context = CryptContext(
+    schemes=["bcrypt"],
+    deprecated="auto",
+)
 
 
 def hash_password(password: str) -> str:
-    return password_hasher.hash(password)
+    return pwd_context.hash(password)
 
 
-def verify_password(password: str, password_hash: str) -> bool:
-    try:
-        password_hasher.verify(password_hash, password)
-        return True
-    except Exception:
-        return False
+def verify_password(
+    plain_password: str,
+    hashed_password: str,
+) -> bool:
+    return pwd_context.verify(
+        plain_password,
+        hashed_password,
+    )
 
 
 def create_access_token(user_id: str) -> str:
@@ -38,9 +43,20 @@ def create_access_token(user_id: str) -> str:
     )
 
 
-def decode_access_token(token: str) -> dict:
-    return jwt.decode(
-        token,
-        settings.JWT_SECRET_KEY,
-        algorithms=[settings.JWT_ALGORITHM],
-    )
+def decode_access_token(token: str) -> str | None:
+    try:
+        payload = jwt.decode(
+            token,
+            settings.JWT_SECRET_KEY,
+            algorithms=[settings.JWT_ALGORITHM],
+        )
+
+        user_id = payload.get("sub")
+
+        if not user_id:
+            return None
+
+        return user_id
+
+    except JWTError:
+        return None

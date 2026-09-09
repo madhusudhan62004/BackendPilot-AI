@@ -29,6 +29,7 @@ async def register(data: UserRegister):
             data.email,
             data.password,
         )
+
     except ValueError as exc:
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
@@ -56,6 +57,9 @@ async def login(data: UserLogin):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid email or password",
+            headers={
+                "WWW-Authenticate": "Bearer",
+            },
         )
 
     token = create_access_token(
