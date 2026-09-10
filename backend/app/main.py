@@ -4,6 +4,7 @@ from app.core.config import settings
 from app.core.database import database
 from app.auth.router import router as auth_router
 from app.projects.router import router as projects_router
+from app.repositories.router import router as repositories_router
 app = FastAPI(
     title=settings.APP_NAME,
     description="AI-powered backend repository intelligence platform",
@@ -11,6 +12,7 @@ app = FastAPI(
 )
 app.include_router(auth_router)
 app.include_router(projects_router)
+app.include_router(repositories_router)
 @app.get("/")
 async def root():
     return {
