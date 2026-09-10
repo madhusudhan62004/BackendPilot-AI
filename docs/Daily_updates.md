@@ -140,3 +140,23 @@ The BackendPilot data layer is now connected to MongoDB and ready for the authen
 ## Status
 
 **Phase 2 — Day 3 completed successfully.**
+
+## Phase 2 — Day 4: Repository Management
+
+### Completed
+
+* Implemented repository data model and MongoDB DAO.
+* Added repository service layer with project ownership validation.
+* Added repository CRUD APIs.
+* Implemented ZIP repository upload and validation.
+* Added filesystem storage for uploaded repositories.
+* Stored repository metadata in MongoDB.
+* Added repository status tracking.
+* Implemented repository access isolation through project ownership.
+* Added filesystem cleanup when repositories are deleted.
+* Tested repository upload, retrieval, listing, authorization, and deletion.
+
+### Result
+
+Users can now create and manage repository records within their own projects and upload repository ZIPs for future analysis.
+
