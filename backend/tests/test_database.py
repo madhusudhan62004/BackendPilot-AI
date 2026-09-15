@@ -5,7 +5,6 @@ from app.projects.dao import create_project
 
 @pytest.mark.anyio
 async def test_create_project():
-
     project_data = {
         "name": "Test BackendPilot",
         "description": "Testing MongoDB",

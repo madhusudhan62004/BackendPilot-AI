@@ -160,3 +160,20 @@ The BackendPilot data layer is now connected to MongoDB and ready for the authen
 
 Users can now create and manage repository records within their own projects and upload repository ZIPs for future analysis.
 
+## Phase 2 — Day 5: Testing, Integration, and Cleanup
+
+### Completed
+- Manually verified authentication workflows through Swagger.
+- Tested user registration and login.
+- Verified protected `/auth/me` endpoint.
+- Tested project creation, retrieval, listing, and deletion.
+- Tested repository ZIP upload and retrieval.
+- Verified repository deletion and uploaded-file cleanup.
+- Confirmed project and repository ownership validation.
+- Reviewed the Phase 2 integration flow.
+
+### Result
+Phase 2 is complete. Users can authenticate, create projects, manage repositories, upload ZIP files, and securely access their own resources.
+
+### Next
+Phase 3 — Repository Analysis Engine.
