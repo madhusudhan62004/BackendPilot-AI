@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 from bson import ObjectId
 from pathlib import Path
+from app.analysis.extractor import extract_repository
 from app.projects.service import get_user_project
 from app.repositories.dao import (
     create_repository,
@@ -97,8 +98,10 @@ async def save_repository_file(
 
     file_path = storage_dir / "repository.zip"
 
+    # Save uploaded ZIP
     file_path.write_bytes(file_content)
 
+    # Update storage path
     await update_repository(
         repository_id,
         {
@@ -106,5 +109,46 @@ async def save_repository_file(
             "updated_at": datetime.now(timezone.utc),
         },
     )
+
+    extract_path = storage_dir / "extracted"
+
+    try:
+        # Mark extraction as in progress
+        await update_repository(
+            repository_id,
+            {
+                "status": "extracting",
+                "updated_at": datetime.now(timezone.utc),
+            },
+        )
+
+        # Extract repository
+        extract_repository(
+            str(file_path),
+            str(extract_path),
+        )
+
+        # Mark extraction as successful
+        await update_repository(
+            repository_id,
+            {
+                "status": "extracted",
+                "updated_at": datetime.now(timezone.utc),
+            },
+        )
+        updated_repository = await get_repository_by_id(repository_id)
+        print("STATUS AFTER EXTRACTION:", updated_repository["status"])
+
+    except Exception:
+        # Mark extraction as failed
+        await update_repository(
+            repository_id,
+            {
+                "status": "failed",
+                "updated_at": datetime.now(timezone.utc),
+            },
+        )
+
+        raise
 
     return str(file_path)
