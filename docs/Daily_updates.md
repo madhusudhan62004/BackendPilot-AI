@@ -177,3 +177,57 @@ Phase 2 is complete. Users can authenticate, create projects, manage repositorie
 
 ### Next
 Phase 3 — Repository Analysis Engine.
+
+## Phase 3 — Day 1: Repository Extraction & Workspace
+
+### Completed
+
+* Implemented secure ZIP repository extraction.
+* Added ZIP path traversal protection.
+* Created repository-specific storage and extraction workspace.
+* Integrated repository extraction into the upload workflow.
+* Added repository status tracking for extraction states.
+* Verified repository ZIP upload and successful extraction.
+* Identified and resolved Uvicorn auto-reload issues caused by extracted repository files being watched as application changes.
+
+### Result
+
+BackendPilot AI can now safely extract uploaded repository ZIP files into isolated repository workspaces, ready for further analysis.
+
+### Next
+
+Phase 3 Day 2 — Repository Discovery & File Inventory.
+
+---
+
+## Phase 3 — Day 2: Repository Discovery & File Inventory
+
+### Completed
+
+* Implemented recursive repository file discovery.
+* Added file metadata extraction:
+
+  * Relative path
+  * File name
+  * File extension
+  * File size
+* Added ignored directories for generated/dependency content:
+
+  * `.git`
+  * `node_modules`
+  * `__pycache__`
+  * `.venv`
+  * `venv`
+  * `dist`
+  * `build`
+* Verified discovery against an extracted backend repository.
+* Confirmed irrelevant virtual-environment files are excluded.
+* Successfully discovered 10 relevant repository files.
+
+### Result
+
+BackendPilot AI can now build a clean file inventory of an extracted repository while filtering out dependency and generated directories.
+
+### Next
+
+Phase 3 Day 3 — Language & Framework Detection.
