@@ -231,3 +231,24 @@ BackendPilot AI can now build a clean file inventory of an extracted repository 
 ### Next
 
 Phase 3 Day 3 — Language & Framework Detection.
+
+## Phase 3 — Day 3: Language & Framework Detection
+
+### Completed
+
+* Implemented repository language detection based on file extensions.
+* Added support for detecting common languages including Python, JavaScript, TypeScript, Java, Go, Rust, C, and C++.
+* Implemented framework detection using repository dependency information.
+* Added detection for FastAPI, Django, Flask, Celery, Express, and NestJS.
+* Used `requirements.txt` as dependency evidence for Python framework detection.
+* Verified detection against an extracted backend repository.
+* Successfully detected Python, FastAPI, and Celery.
+
+### Result
+
+BackendPilot AI can now identify the primary programming languages and frameworks used by an analyzed repository using deterministic evidence from its files and dependencies.
+
+### Next
+
+Phase 3 Day 4 — Source Code Parsing using Python AST.
+
