@@ -252,3 +252,26 @@ BackendPilot AI can now identify the primary programming languages and framework
 
 Phase 3 Day 4 — Source Code Parsing using Python AST.
 
+## Phase 3 — Day 4: Source Code Parsing
+
+### Completed
+
+* Implemented Python source-code parsing using Python's built-in AST module.
+* Added extraction of imported modules and dependencies.
+* Added detection of Python classes.
+* Added detection of synchronous and asynchronous functions.
+* Added extraction of function arguments.
+* Added extraction of function decorators.
+* Tested the parser against the repository's `order_routes.py`.
+* Successfully identified route decorators such as `router.post()` and `router.get()`.
+* Verified extraction of functions including `process_order_background`, `create_order`, `get_order`, and `get_all_orders`.
+
+### Result
+
+BackendPilot AI can now convert Python source files into structured code information containing imports, classes, functions, arguments, and decorators. This provides the foundation for identifying backend-specific entities in the next stage.
+
+### Next
+
+Phase 3 Day 5 — Backend Entity Extraction.
+
+
