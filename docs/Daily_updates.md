@@ -274,4 +274,26 @@ BackendPilot AI can now convert Python source files into structured code informa
 
 Phase 3 Day 5 — Backend Entity Extraction.
 
+## Phase 3 — Day 5: Backend Entity Extraction
 
+### Completed
+- Implemented backend entity classification from repository structure.
+- Added detection for:
+  - Routes
+  - Services
+  - Models
+  - Database modules
+  - Background tasks
+- Added extraction of route endpoints from router decorators.
+- Added extraction of service functions.
+- Added extraction of model classes.
+- Added extraction of database-related imports.
+- Added extraction of task functions.
+- Fixed path-context classification so BackendPilot AI's own `storage/repositories` directory does not interfere with source-repository entity detection.
+- Verified entity extraction against the sample backend repository.
+
+### Result
+BackendPilot AI can now convert discovered source files into structured backend entities such as routes, services, models, databases, and tasks, along with useful metadata about each entity.
+
+### Next
+Phase 3 Day 6 — Dependency & Relationship Analysis.
