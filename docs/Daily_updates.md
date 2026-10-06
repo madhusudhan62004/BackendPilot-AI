@@ -297,3 +297,24 @@ BackendPilot AI can now convert discovered source files into structured backend 
 
 ### Next
 Phase 3 Day 6 — Dependency & Relationship Analysis.
+
+## Phase 3 — Day 6: Dependency & Relationship Analysis
+
+### Completed
+- Implemented file-level import dependency extraction.
+- Resolved internal Python imports to their corresponding source files.
+- Added qualified function-call extraction.
+- Added source line numbers to function calls.
+- Implemented function-to-function relationship detection.
+- Detected `create_order()` → `process_order_task()` through `process_order_task.delay()`.
+- Implemented resource relationship detection for application database resources.
+- Detected MongoDB collection operations and Redis operations used by backend functions.
+- Filtered out standard-library calls, task calls, and logging calls from resource relationships.
+- Reused repository discovery filtering to avoid analyzing virtual environments and generated files.
+- Verified the dependency and relationship extraction against the sample backend repository.
+
+### Result
+BackendPilot AI can now identify how backend components are connected through imports, function calls, and infrastructure/resource usage, while preserving source locations for traceability.
+
+### Next
+Phase 3 Day 7 — Unified System Model.
