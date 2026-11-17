@@ -318,3 +318,48 @@ BackendPilot AI can now identify how backend components are connected through im
 
 ### Next
 Phase 3 Day 7 — Unified System Model.
+
+## Phase 3 — Day 7: Unified System Model
+
+### Completed
+
+- Created the Unified System Model schemas using Pydantic.
+- Added structured representations for:
+  - Repository metadata
+  - System nodes
+  - Source locations
+  - Relationships and relationship evidence
+  - Analysis statistics
+- Defined supported node types:
+  - Files
+  - Functions
+  - Classes
+  - API endpoints
+  - Infrastructure resources
+- Defined supported relationship types:
+  - Contains
+  - Imports
+  - Exposes
+  - Handled by
+  - Calls
+  - Accesses
+- Implemented deterministic node and relationship ID generation using repository-relative paths and component identities.
+- Created `builder.py` to combine outputs from the existing repository analysis modules.
+- Integrated repository discovery and language/framework detection into the System Model builder.
+- Integrated Python AST parsing and backend entity extraction.
+- Added file, function, class and endpoint nodes.
+- Added file-level import relationships.
+- Added function-to-function call relationships.
+- Added infrastructure resource nodes and function-to-resource access relationships.
+- Preserved source paths, line numbers and relationship evidence wherever available.
+- Added model statistics for discovered files, nodes and relationships.
+- Handled Python parsing failures without excluding discovered files from the System Model.
+- Successfully executed the System Model builder against the sample `lvs-project` repository.
+
+### Result
+
+BackendPilot AI can now combine the outputs of its repository analysis modules into a unified, structured representation of a backend repository.
+
+The Unified System Model provides a central representation of repository files, functions, classes, API endpoints, infrastructure resources and their relationships.
+
+This establishes the foundation for upcoming features such as architecture exploration, repository-aware search, AI-powered codebase understanding, execution flow exploration and impact analysis.
